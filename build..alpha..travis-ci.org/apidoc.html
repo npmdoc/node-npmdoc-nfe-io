@@ -1,0 +1,4528 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/nfeio/client-nodejs"
+
+    >nfe-io (v0.0.6)</a>
+</h1>
+<h4>Official NFe.io API Client for Node.js</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io">module nfe-io</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.nfe-io">
+            function <span class="apidocSignatureSpan"></span>nfe-io
+            <span class="apidocSignatureSpan">(key, version)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error">
+            function <span class="apidocSignatureSpan">nfe-io.</span>Error
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource">
+            function <span class="apidocSignatureSpan">nfe-io.</span>baseResource
+            <span class="apidocSignatureSpan">(client, urlData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies">
+            function <span class="apidocSignatureSpan">nfe-io.</span>resources.Companies
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople">
+            function <span class="apidocSignatureSpan">nfe-io.</span>resources.LegalPeople
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople">
+            function <span class="apidocSignatureSpan">nfe-io.</span>resources.NaturalPeople
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices">
+            function <span class="apidocSignatureSpan">nfe-io.</span>resources.ServiceInvoices
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks">
+            function <span class="apidocSignatureSpan">nfe-io.</span>resources.Webhooks
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">nfe-io.</span>DEFAULT_TIMEOUT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>DEFAULT_API_VERSION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>Error.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>USER_AGENT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>USER_AGENT_SERIALIZED</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>baseResource.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>resources</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>resources.Companies.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>resources.LegalPeople.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>resources.NaturalPeople.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>resources.ServiceInvoices.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>resources.Webhooks.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">nfe-io.</span>utils</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.</span>DEFAULT_BASE_PATH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.</span>DEFAULT_HOST</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.</span>DEFAULT_PORT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.</span>DEFAULT_PROTOCOL</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.</span>PACKAGE_VERSION</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.Error">module nfe-io.Error</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.Error">
+            function <span class="apidocSignatureSpan">nfe-io.</span>Error
+            <span class="apidocSignatureSpan">(raw)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.APIError">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>APIError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.AuthenticationError">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>AuthenticationError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.BadRequestError">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>BadRequestError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.ConflictError">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>ConflictError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.ConnectionError">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>ConnectionError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.NotFoundError">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>NotFoundError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.ResourceError">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>ResourceError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.extend">
+            function <span class="apidocSignatureSpan">nfe-io.Error.</span>extend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.Error.prototype">module nfe-io.Error.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.Error.prototype.populate">
+            function <span class="apidocSignatureSpan">nfe-io.Error.prototype.</span>populate
+            <span class="apidocSignatureSpan">(type, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.Error.prototype.</span>type</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.baseResource">module nfe-io.baseResource</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.baseResource">
+            function <span class="apidocSignatureSpan">nfe-io.</span>baseResource
+            <span class="apidocSignatureSpan">(client, urlData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.extend">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.</span>extend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.method">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.</span>method
+            <span class="apidocSignatureSpan">(spec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.baseResource.prototype">module nfe-io.baseResource.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype._errorHandler">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_errorHandler
+            <span class="apidocSignatureSpan">(req, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype._request">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_request
+            <span class="apidocSignatureSpan">(method, path, data, auth, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype._responseHandler">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_responseHandler
+            <span class="apidocSignatureSpan">(res, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype._timeoutHandler">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_timeoutHandler
+            <span class="apidocSignatureSpan">(timeout, req, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype.createDeferred">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>createDeferred
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype.createFullPath">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>createFullPath
+            <span class="apidocSignatureSpan">(commandPath, urlData)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype.createUrlData">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>createUrlData
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.baseResource.prototype.initialize">
+            function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>initialize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources">module nfe-io.resources</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>Companies
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>LegalPeople
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>NaturalPeople
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>ServiceInvoices
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>Webhooks
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.Companies">module nfe-io.resources.Companies</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.Companies">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>Companies
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.extend">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.</span>extend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.method">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.</span>method
+            <span class="apidocSignatureSpan">(spec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.Companies.prototype">module nfe-io.resources.Companies.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.prototype.create">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.prototype.list">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.prototype.remove">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>remove
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.prototype.retrieve">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>retrieve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.prototype.update">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Companies.prototype.uploadCertificate">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>uploadCertificate
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.LegalPeople">module nfe-io.resources.LegalPeople</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.LegalPeople">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>LegalPeople
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.extend">
+            function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.</span>extend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.method">
+            function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.</span>method
+            <span class="apidocSignatureSpan">(spec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.LegalPeople.prototype">module nfe-io.resources.LegalPeople.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.create">
+            function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.list">
+            function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.remove">
+            function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>remove
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.retrieve">
+            function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>retrieve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.update">
+            function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.NaturalPeople">module nfe-io.resources.NaturalPeople</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.NaturalPeople">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>NaturalPeople
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.extend">
+            function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.</span>extend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.method">
+            function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.</span>method
+            <span class="apidocSignatureSpan">(spec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.NaturalPeople.prototype">module nfe-io.resources.NaturalPeople.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.create">
+            function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.list">
+            function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.remove">
+            function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>remove
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.retrieve">
+            function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>retrieve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.update">
+            function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.ServiceInvoices">module nfe-io.resources.ServiceInvoices</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.ServiceInvoices">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>ServiceInvoices
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.extend">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.</span>extend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.method">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.</span>method
+            <span class="apidocSignatureSpan">(spec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.ServiceInvoices.prototype">module nfe-io.resources.ServiceInvoices.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.cancel">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>cancel
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.create">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.downloadPdf">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>downloadPdf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.downloadXml">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>downloadXml
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.list">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.retrieve">
+            function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>retrieve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.Webhooks">module nfe-io.resources.Webhooks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.Webhooks">
+            function <span class="apidocSignatureSpan">nfe-io.resources.</span>Webhooks
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.extend">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.</span>extend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.method">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.</span>method
+            <span class="apidocSignatureSpan">(spec)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.resources.Webhooks.prototype">module nfe-io.resources.Webhooks.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.prototype.create">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>create
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.prototype.list">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>list
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.prototype.remove">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>remove
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.prototype.retrieve">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>retrieve
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.resources.Webhooks.prototype.update">
+            function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>update
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>path</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.nfe-io.utils">module nfe-io.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.utils.isAuthKey">
+            function <span class="apidocSignatureSpan">nfe-io.utils.</span>isAuthKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.utils.isObject">
+            function <span class="apidocSignatureSpan">nfe-io.utils.</span>isObject
+            <span class="apidocSignatureSpan">(o)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.utils.makeURLInterpolator">
+            function <span class="apidocSignatureSpan">nfe-io.utils.</span>makeURLInterpolator
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.utils.protoExtend">
+            function <span class="apidocSignatureSpan">nfe-io.utils.</span>protoExtend
+            <span class="apidocSignatureSpan">(sub)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.nfe-io.utils.stringifyRequestData">
+            function <span class="apidocSignatureSpan">nfe-io.utils.</span>stringifyRequestData
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io" id="apidoc.module.nfe-io">module nfe-io</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.nfe-io" id="apidoc.element.nfe-io.nfe-io">
+        function <span class="apidocSignatureSpan"></span>nfe-io
+        <span class="apidocSignatureSpan">(key, version)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Nfe(key, version) {
+
+  if (!(this instanceof Nfe)) {
+    return new Nfe(key, version);
+  }
+
+  this._api = {
+    auth: null,
+    host: Nfe.DEFAULT_HOST,
+    protocol: Nfe.DEFAULT_PROTOCOL,
+    port: Nfe.DEFAULT_PORT,
+    basePath: Nfe.DEFAULT_BASE_PATH,
+    version: Nfe.DEFAULT_API_VERSION,
+    timeout: Nfe.DEFAULT_TIMEOUT,
+    dev: false
+  };
+
+  this._prepResources();
+  this.setApiKey(key);
+  this.setApiVersion(version);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error" id="apidoc.element.nfe-io.Error">
+        function <span class="apidocSignatureSpan">nfe-io.</span>Error
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _Error(raw) {
+  this.populate.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource" id="apidoc.element.nfe-io.baseResource">
+        function <span class="apidocSignatureSpan">nfe-io.</span>baseResource
+        <span class="apidocSignatureSpan">(client, urlData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NfeResource(client, urlData) {
+
+  this._client = client;
+  this._urlData = urlData || {};
+
+  this.basePath = utils.makeURLInterpolator(this._client.getApiField(&#x27;basePath&#x27;));
+  this.path = utils.makeURLInterpolator(this.path);
+
+  this.initialize.apply(this, arguments);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies" id="apidoc.element.nfe-io.resources.Companies">
+        function <span class="apidocSignatureSpan">nfe-io.</span>resources.Companies
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resources.Companies = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople" id="apidoc.element.nfe-io.resources.LegalPeople">
+        function <span class="apidocSignatureSpan">nfe-io.</span>resources.LegalPeople
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resources.LegalPeople = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople" id="apidoc.element.nfe-io.resources.NaturalPeople">
+        function <span class="apidocSignatureSpan">nfe-io.</span>resources.NaturalPeople
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resources.NaturalPeople = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices" id="apidoc.element.nfe-io.resources.ServiceInvoices">
+        function <span class="apidocSignatureSpan">nfe-io.</span>resources.ServiceInvoices
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resources.ServiceInvoices = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks" id="apidoc.element.nfe-io.resources.Webhooks">
+        function <span class="apidocSignatureSpan">nfe-io.</span>resources.Webhooks
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resources.Webhooks = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.Error" id="apidoc.module.nfe-io.Error">module nfe-io.Error</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.Error" id="apidoc.element.nfe-io.Error.Error">
+        function <span class="apidocSignatureSpan">nfe-io.</span>Error
+        <span class="apidocSignatureSpan">(raw)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _Error(raw) {
+  this.populate.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.APIError" id="apidoc.element.nfe-io.Error.APIError">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>APIError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">APIError = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      case 404:
+        return new _Error.NotFoundError(raw);
+        break;
+      case 409:
+        return new _Error.ConflictError(raw);
+        break;
+      default:
+        return new _Error.<span class="apidocCodeKeywordSpan">APIError</span>(raw);
+        break;
+  }
+
+  return new _Error(&#x27;Generic&#x27;, &#x27;Unknown Error&#x27;);
+};
+
+// Specific Stripe Error types:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.AuthenticationError" id="apidoc.element.nfe-io.Error.AuthenticationError">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>AuthenticationError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AuthenticationError = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.BadRequestError" id="apidoc.element.nfe-io.Error.BadRequestError">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>BadRequestError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">BadRequestError = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Helper factory which takes raw iugu errors and outputs wrapping instances
+ */
+ResourceError.generate = function(raw) {
+
+switch (raw.code) {
+    case 400:
+      return new _Error.<span class="apidocCodeKeywordSpan">BadRequestError</span>(raw);
+      break;
+    case 404:
+      return new _Error.NotFoundError(raw);
+      break;
+    case 409:
+      return new _Error.ConflictError(raw);
+      break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.ConflictError" id="apidoc.element.nfe-io.Error.ConflictError">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>ConflictError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConflictError = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    case 400:
+      return new _Error.BadRequestError(raw);
+      break;
+    case 404:
+      return new _Error.NotFoundError(raw);
+      break;
+    case 409:
+      return new _Error.<span class="apidocCodeKeywordSpan">ConflictError</span>(raw);
+      break;
+    default:
+      return new _Error.APIError(raw);
+      break;
+}
+
+return new _Error(&#x27;Generic&#x27;, &#x27;Unknown Error&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.ConnectionError" id="apidoc.element.nfe-io.Error.ConnectionError">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>ConnectionError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConnectionError = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.NotFoundError" id="apidoc.element.nfe-io.Error.NotFoundError">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>NotFoundError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NotFoundError = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ResourceError.generate = function(raw) {
+
+switch (raw.code) {
+    case 400:
+      return new _Error.BadRequestError(raw);
+      break;
+    case 404:
+      return new _Error.<span class="apidocCodeKeywordSpan">NotFoundError</span>(raw);
+      break;
+    case 409:
+      return new _Error.ConflictError(raw);
+      break;
+    default:
+      return new _Error.APIError(raw);
+      break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.ResourceError" id="apidoc.element.nfe-io.Error.ResourceError">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>ResourceError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ResourceError = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.extend" id="apidoc.element.nfe-io.Error.extend">
+        function <span class="apidocSignatureSpan">nfe-io.Error.</span>extend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_Error.extend = utils.protoExtend;
+
+/**
+ * Create subclass of internal Error class
+ * (Specifically for errors returned from NFe.io REST API)
+ */
+var ResourceError = _Error.ResourceError = _Error.<span class="apidocCodeKeywordSpan">extend</span>({
+  type: &#x27;ResourceError&#x27;,
+  populate: function(raw) {
+
+// Move from prototype def (so it appears in stringified obj)
+this.type = this.type;
+
+this.code = raw.code;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.Error.prototype" id="apidoc.module.nfe-io.Error.prototype">module nfe-io.Error.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.Error.prototype.populate" id="apidoc.element.nfe-io.Error.prototype.populate">
+        function <span class="apidocSignatureSpan">nfe-io.Error.prototype.</span>populate
+        <span class="apidocSignatureSpan">(type, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">populate = function (type, message) {
+  this.type = type;
+  this.message = message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.baseResource" id="apidoc.module.nfe-io.baseResource">module nfe-io.baseResource</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.baseResource" id="apidoc.element.nfe-io.baseResource.baseResource">
+        function <span class="apidocSignatureSpan">nfe-io.</span>baseResource
+        <span class="apidocSignatureSpan">(client, urlData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NfeResource(client, urlData) {
+
+  this._client = client;
+  this._urlData = urlData || {};
+
+  this.basePath = utils.makeURLInterpolator(this._client.getApiField(&#x27;basePath&#x27;));
+  this.path = utils.makeURLInterpolator(this.path);
+
+  this.initialize.apply(this, arguments);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.extend" id="apidoc.element.nfe-io.baseResource.extend">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.</span>extend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_Error.extend = utils.protoExtend;
+
+/**
+ * Create subclass of internal Error class
+ * (Specifically for errors returned from NFe.io REST API)
+ */
+var ResourceError = _Error.ResourceError = _Error.<span class="apidocCodeKeywordSpan">extend</span>({
+  type: &#x27;ResourceError&#x27;,
+  populate: function(raw) {
+
+// Move from prototype def (so it appears in stringified obj)
+this.type = this.type;
+
+this.code = raw.code;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.method" id="apidoc.element.nfe-io.baseResource.method">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.</span>method
+        <span class="apidocSignatureSpan">(spec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nfeMethod(spec) {
+
+  var commandPath = utils.makeURLInterpolator( spec.path || &#x27;&#x27; );
+  var requestMethod = (spec.method || &#x27;GET&#x27;).toUpperCase();
+  var urlParams = spec.urlParams || [];
+
+  return function() {
+
+    var self = this;
+    var args = [].slice.call(arguments);
+
+    var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+    var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+    var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+    var urlData = this.createUrlData();
+
+    var deferred = this.createDeferred(callback);
+
+    for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+      var arg = args[0];
+      if (urlParams[i] &#x26;&#x26; !arg) {
+        throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+      }
+      urlData[urlParams[i]] = args.shift();
+    }
+
+    if (args.length) {
+      throw new Error(
+        &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+      );
+    }
+
+    var requestPath = this.createFullPath(commandPath, urlData);
+
+    self._request(requestMethod, requestPath, data, auth, function(err, response) {
+      if (err) {
+        deferred.reject(err);
+      } else {
+        deferred.resolve(
+          spec.transformResponseData ?
+            spec.transformResponseData(response) :
+            response
+        );
+      }
+    });
+
+    return deferred.promise;
+
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.baseResource.prototype" id="apidoc.module.nfe-io.baseResource.prototype">module nfe-io.baseResource.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype._errorHandler" id="apidoc.element.nfe-io.baseResource.prototype._errorHandler">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_errorHandler
+        <span class="apidocSignatureSpan">(req, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_errorHandler = function (req, callback) {
+  var self = this;
+  return function(error) {
+    if (req._isAborted) return; // already handled
+    callback.call(
+      self,
+      new Error.ConnectionError({
+        message: &#x27;An error occurred with our connection to NFe.io&#x27;,
+        detail: error
+      }),
+      null
+    );
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype._request" id="apidoc.element.nfe-io.baseResource.prototype._request">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_request
+        <span class="apidocSignatureSpan">(method, path, data, auth, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_request = function (method, path, data, auth, callback) {
+
+  var requestData = JSON.stringify(data || {});
+  var self = this;
+
+  var apiVersion = this._client.getApiField(&#x27;version&#x27;);
+  var headers = {
+    // Use specified auth token or use default from this stripe instance:
+    &#x27;Authorization&#x27;: auth ?
+      &#x27;Basic &#x27; + new Buffer(auth) : //&#x27;Basic &#x27; + new Buffer(auth + &#x27;:&#x27;).toString(&#x27;base64&#x27;) :
+      this._client.getApiField(&#x27;auth&#x27;),
+    &#x27;Accept&#x27;: &#x27;application/json&#x27;,
+    &#x27;User-Agent&#x27;: &#x27;Nfe-io/v1 NodeBindings/&#x27; + this._client.getConstant(&#x27;PACKAGE_VERSION&#x27;),
+  };
+
+  if (method !== &#x27;GET&#x27; &#x26;&#x26; data.formData === undefined)
+  {
+    headers[&#x27;Content-Type&#x27;] = &#x27;application/json&#x27;;
+    //headers[&#x27;Content-Length&#x27;] = Buffer.byteLength(requestData);
+  }
+
+  if (apiVersion) {
+    headers[&#x27;Nfe-Version&#x27;] = apiVersion;
+  }
+
+  // Grab client-user-agent before making the request:
+  this._client.getClientUserAgent(function(cua) {
+    //headers[&#x27;X-Nfe-Client-User-Agent&#x27;] = cua;
+    makeRequest();
+  });
+
+  function makeRequest() {
+
+    var timeout = self._client.getApiField(&#x27;timeout&#x27;),
+        options = {
+          host: self._client.getApiField(&#x27;host&#x27;),
+          port: self._client.getApiField(&#x27;port&#x27;),
+          path: path,
+          method: method,
+          headers: headers,
+          agent: false,
+          rejectUnauthorized: false,
+          secureOptions: constants.SSL_OP_NO_TLSv1_2,
+          strictSSL: false
+        };
+
+    if (data.formData) {
+      options.formData = data;
+      requestData = undefined;
+    }
+
+    var req = (
+      self._client.getApiField(&#x27;protocol&#x27;) == &#x27;http&#x27; ? http : https
+    ).request(options);
+
+    req.setTimeout(timeout, self._timeoutHandler(timeout, req, callback));
+    req.on(&#x27;response&#x27;, self._responseHandler(req, callback));
+    req.on(&#x27;error&#x27;, self._errorHandler(req, callback));
+
+    req.on(&#x27;socket&#x27;, function(socket) {
+      socket.on(&#x27;secureConnect&#x27;, function() {
+        if (requestData) {
+          req.write(requestData);
+        }
+        req.end();
+      });
+    });
+
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  throw new Error(
+    &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+  );
+}
+
+var requestPath = this.createFullPath(commandPath, urlData);
+
+self.<span class="apidocCodeKeywordSpan">_request</span>(requestMethod, requestPath, data, auth, function(err, response) {
+  if (err) {
+    deferred.reject(err);
+  } else {
+    deferred.resolve(
+      spec.transformResponseData ?
+        spec.transformResponseData(response) :
+        response
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype._responseHandler" id="apidoc.element.nfe-io.baseResource.prototype._responseHandler">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_responseHandler
+        <span class="apidocSignatureSpan">(res, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_responseHandler = function (res, callback) {
+  var self = this;
+
+  return function(res) {
+
+    if (res.statusCode === 201 || res.statusCode === 202) {
+      callback.call(self, null, {
+        code: res.statusCode,
+        location: res.headers.location
+      });
+    }
+
+    var data = &#x27;&#x27;;
+    res.setEncoding(&#x27;utf8&#x27;);
+    res.on(&#x27;data&#x27;, function(chunk) {
+      data += chunk;
+    });
+    res.on(&#x27;end&#x27;, function() {
+      try {
+
+        var response = JSON.parse(data);
+        response.code = res.statusCode;
+
+        if (response.code &#x3e; 299) {
+          var err;
+          if (response.code === 401) {
+            err = new Error.AuthenticationError(response.message);
+          } else {
+            err = Error.ResourceError.generate(response);
+          }
+          return callback.call(self, err, null);
+        }
+
+      } catch (e) {
+        return callback.call(
+          self,
+          new Error.APIError({
+            message: &#x27;Invalid JSON received from the NFe.io API&#x27;,
+            response: response,
+            exception: e
+          }),
+          null
+        );
+      }
+      callback.call(self, null, response);
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype._timeoutHandler" id="apidoc.element.nfe-io.baseResource.prototype._timeoutHandler">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>_timeoutHandler
+        <span class="apidocSignatureSpan">(timeout, req, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_timeoutHandler = function (timeout, req, callback) {
+  var self = this;
+  return function() {
+    var timeoutErr = new Error(&#x27;ETIMEDOUT&#x27;);
+    timeoutErr.code = &#x27;ETIMEDOUT&#x27;;
+
+    req._isAborted = true;
+    req.abort();
+
+    callback.call(
+      self,
+      new Error.ConnectionError({
+        message: &#x27;Request aborted due to timeout being reached (&#x27; + timeout + &#x27;ms)&#x27;,
+        detail: timeoutErr
+      }),
+      null
+    );
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype.createDeferred" id="apidoc.element.nfe-io.baseResource.prototype.createDeferred">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>createDeferred
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createDeferred = function (callback) {
+    var deferred = when.defer();
+
+    if (callback) {
+      // Callback, if provided, is a simply translated to Promise&#x27;esque:
+      // (Ensure callback is called outside of promise stack)
+      deferred.promise.then(function(res) {
+        setTimeout(function(){ callback(null, res) }, 0);
+      }, function(err) {
+        setTimeout(function(){ callback(err, null); }, 0);
+      });
+    }
+
+    return deferred;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var args = [].slice.call(arguments);
+
+var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+var urlData = this.createUrlData();
+
+var deferred = this.<span class="apidocCodeKeywordSpan">createDeferred</span>(callback);
+
+for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+  var arg = args[0];
+  if (urlParams[i] &#x26;&#x26; !arg) {
+    throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+  }
+  urlData[urlParams[i]] = args.shift();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype.createFullPath" id="apidoc.element.nfe-io.baseResource.prototype.createFullPath">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>createFullPath
+        <span class="apidocSignatureSpan">(commandPath, urlData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createFullPath = function (commandPath, urlData) {
+  return path.join(
+    this.basePath(urlData),
+    this.path(urlData),
+    typeof commandPath == &#x27;function&#x27; ?
+      commandPath(urlData) : commandPath
+  ).replace(/\\/g, &#x27;/&#x27;); // ugly workaround for Windows
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (args.length) {
+  throw new Error(
+    &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+  );
+}
+
+var requestPath = this.<span class="apidocCodeKeywordSpan">createFullPath</span>(commandPath, urlData);
+
+self._request(requestMethod, requestPath, data, auth, function(err, response) {
+  if (err) {
+    deferred.reject(err);
+  } else {
+    deferred.resolve(
+      spec.transformResponseData ?
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype.createUrlData" id="apidoc.element.nfe-io.baseResource.prototype.createUrlData">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>createUrlData
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createUrlData = function () {
+  var urlData = {};
+  // Merge in baseData
+  for (var i in this._urlData) {
+    if (hasOwn.call(this._urlData, i)) {
+      urlData[i] = this._urlData[i];
+    }
+  }
+  return urlData;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var self = this;
+var args = [].slice.call(arguments);
+
+var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+var urlData = this.<span class="apidocCodeKeywordSpan">createUrlData</span>();
+
+var deferred = this.createDeferred(callback);
+
+for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+  var arg = args[0];
+  if (urlParams[i] &#x26;&#x26; !arg) {
+    throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.baseResource.prototype.initialize" id="apidoc.element.nfe-io.baseResource.prototype.initialize">
+        function <span class="apidocSignatureSpan">nfe-io.baseResource.prototype.</span>initialize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initialize = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources" id="apidoc.module.nfe-io.resources">module nfe-io.resources</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies" id="apidoc.element.nfe-io.resources.Companies">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>Companies
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Companies = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople" id="apidoc.element.nfe-io.resources.LegalPeople">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>LegalPeople
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LegalPeople = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople" id="apidoc.element.nfe-io.resources.NaturalPeople">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>NaturalPeople
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NaturalPeople = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices" id="apidoc.element.nfe-io.resources.ServiceInvoices">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>ServiceInvoices
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ServiceInvoices = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks" id="apidoc.element.nfe-io.resources.Webhooks">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>Webhooks
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Webhooks = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.Companies" id="apidoc.module.nfe-io.resources.Companies">module nfe-io.resources.Companies</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.Companies" id="apidoc.element.nfe-io.resources.Companies.Companies">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>Companies
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Companies = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.extend" id="apidoc.element.nfe-io.resources.Companies.extend">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.</span>extend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_Error.extend = utils.protoExtend;
+
+/**
+ * Create subclass of internal Error class
+ * (Specifically for errors returned from NFe.io REST API)
+ */
+var ResourceError = _Error.ResourceError = _Error.<span class="apidocCodeKeywordSpan">extend</span>({
+  type: &#x27;ResourceError&#x27;,
+  populate: function(raw) {
+
+// Move from prototype def (so it appears in stringified obj)
+this.type = this.type;
+
+this.code = raw.code;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.method" id="apidoc.element.nfe-io.resources.Companies.method">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.</span>method
+        <span class="apidocSignatureSpan">(spec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nfeMethod(spec) {
+
+  var commandPath = utils.makeURLInterpolator( spec.path || &#x27;&#x27; );
+  var requestMethod = (spec.method || &#x27;GET&#x27;).toUpperCase();
+  var urlParams = spec.urlParams || [];
+
+  return function() {
+
+    var self = this;
+    var args = [].slice.call(arguments);
+
+    var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+    var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+    var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+    var urlData = this.createUrlData();
+
+    var deferred = this.createDeferred(callback);
+
+    for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+      var arg = args[0];
+      if (urlParams[i] &#x26;&#x26; !arg) {
+        throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+      }
+      urlData[urlParams[i]] = args.shift();
+    }
+
+    if (args.length) {
+      throw new Error(
+        &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+      );
+    }
+
+    var requestPath = this.createFullPath(commandPath, urlData);
+
+    self._request(requestMethod, requestPath, data, auth, function(err, response) {
+      if (err) {
+        deferred.reject(err);
+      } else {
+        deferred.resolve(
+          spec.transformResponseData ?
+            spec.transformResponseData(response) :
+            response
+        );
+      }
+    });
+
+    return deferred.promise;
+
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.Companies.prototype" id="apidoc.module.nfe-io.resources.Companies.prototype">module nfe-io.resources.Companies.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.prototype.create" id="apidoc.element.nfe-io.resources.Companies.prototype.create">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Exemplo genérico
+// nfe.{ RESOURCE_NAME }.{ METHOD_NAME } ( { PARAMETERS, DATA }, { CALLBACK_FUNCTION } )
+```
+Todo método aceita um callback opcional como ultimo argumento:
+
+### Emitir uma Nota Fiscal de Serviço
+```js
+nfe.serviceInvoices.<span class="apidocCodeKeywordSpan">create</span>(
+
+// ID da empresa, você deve copiar exatamente como está no painel
+&#x27;c73d49f9649046eeba36&#x27;,
+
+// Dados da nota fiscal de serviço
+{
+  // Código do serviço de acordo com o a cidade
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.prototype.list" id="apidoc.element.nfe-io.resources.Companies.prototype.list">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.prototype.remove" id="apidoc.element.nfe-io.resources.Companies.prototype.remove">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>remove
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.prototype.retrieve" id="apidoc.element.nfe-io.resources.Companies.prototype.retrieve">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>retrieve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retrieve = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.prototype.update" id="apidoc.element.nfe-io.resources.Companies.prototype.update">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// 	caso você precise acessar mais de uma empresa, este valor não será útil.
+companyId: &#x22;company-id-from-panel&#x22;
+
+};
+var nfe = require(&#x27;nfe-io&#x27;)(nfeConfig.apiKey);
+
+// Atualizar pessoa juridica
+nfe.legalPeople.<span class="apidocCodeKeywordSpan">update</span>(
+
+// ID da empresa que foi copiado do painel.
+nfeConfig.companyId,
+
+// ID da Pessoa Jurídica
+&#x27;5447d23253c8b704d4b48673&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Companies.prototype.uploadCertificate" id="apidoc.element.nfe-io.resources.Companies.prototype.uploadCertificate">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Companies.prototype.</span>uploadCertificate
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">uploadCertificate = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+companyId: &#x22;company-id-from-panel&#x22;
+
+};
+var nfe = require(&#x27;nfe-io&#x27;)(nfeConfig.apiKey);
+var fs = require(&#x27;fs&#x27;);
+
+// Upload do certificado digital para uma empresa
+nfe.companies.<span class="apidocCodeKeywordSpan">uploadCertificate</span>(
+
+// ID da empresa que foi copiado do painel.
+nfeConfig.companyId,
+
+{
+  formData: {
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.LegalPeople" id="apidoc.module.nfe-io.resources.LegalPeople">module nfe-io.resources.LegalPeople</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.LegalPeople" id="apidoc.element.nfe-io.resources.LegalPeople.LegalPeople">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>LegalPeople
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">LegalPeople = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.extend" id="apidoc.element.nfe-io.resources.LegalPeople.extend">
+        function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.</span>extend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_Error.extend = utils.protoExtend;
+
+/**
+ * Create subclass of internal Error class
+ * (Specifically for errors returned from NFe.io REST API)
+ */
+var ResourceError = _Error.ResourceError = _Error.<span class="apidocCodeKeywordSpan">extend</span>({
+  type: &#x27;ResourceError&#x27;,
+  populate: function(raw) {
+
+// Move from prototype def (so it appears in stringified obj)
+this.type = this.type;
+
+this.code = raw.code;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.method" id="apidoc.element.nfe-io.resources.LegalPeople.method">
+        function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.</span>method
+        <span class="apidocSignatureSpan">(spec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nfeMethod(spec) {
+
+  var commandPath = utils.makeURLInterpolator( spec.path || &#x27;&#x27; );
+  var requestMethod = (spec.method || &#x27;GET&#x27;).toUpperCase();
+  var urlParams = spec.urlParams || [];
+
+  return function() {
+
+    var self = this;
+    var args = [].slice.call(arguments);
+
+    var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+    var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+    var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+    var urlData = this.createUrlData();
+
+    var deferred = this.createDeferred(callback);
+
+    for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+      var arg = args[0];
+      if (urlParams[i] &#x26;&#x26; !arg) {
+        throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+      }
+      urlData[urlParams[i]] = args.shift();
+    }
+
+    if (args.length) {
+      throw new Error(
+        &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+      );
+    }
+
+    var requestPath = this.createFullPath(commandPath, urlData);
+
+    self._request(requestMethod, requestPath, data, auth, function(err, response) {
+      if (err) {
+        deferred.reject(err);
+      } else {
+        deferred.resolve(
+          spec.transformResponseData ?
+            spec.transformResponseData(response) :
+            response
+        );
+      }
+    });
+
+    return deferred.promise;
+
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.LegalPeople.prototype" id="apidoc.module.nfe-io.resources.LegalPeople.prototype">module nfe-io.resources.LegalPeople.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.create" id="apidoc.element.nfe-io.resources.LegalPeople.prototype.create">
+        function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Exemplo genérico
+// nfe.{ RESOURCE_NAME }.{ METHOD_NAME } ( { PARAMETERS, DATA }, { CALLBACK_FUNCTION } )
+```
+Todo método aceita um callback opcional como ultimo argumento:
+
+### Emitir uma Nota Fiscal de Serviço
+```js
+nfe.serviceInvoices.<span class="apidocCodeKeywordSpan">create</span>(
+
+// ID da empresa, você deve copiar exatamente como está no painel
+&#x27;c73d49f9649046eeba36&#x27;,
+
+// Dados da nota fiscal de serviço
+{
+  // Código do serviço de acordo com o a cidade
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.list" id="apidoc.element.nfe-io.resources.LegalPeople.prototype.list">
+        function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.remove" id="apidoc.element.nfe-io.resources.LegalPeople.prototype.remove">
+        function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>remove
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.retrieve" id="apidoc.element.nfe-io.resources.LegalPeople.prototype.retrieve">
+        function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>retrieve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retrieve = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.LegalPeople.prototype.update" id="apidoc.element.nfe-io.resources.LegalPeople.prototype.update">
+        function <span class="apidocSignatureSpan">nfe-io.resources.LegalPeople.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// 	caso você precise acessar mais de uma empresa, este valor não será útil.
+companyId: &#x22;company-id-from-panel&#x22;
+
+};
+var nfe = require(&#x27;nfe-io&#x27;)(nfeConfig.apiKey);
+
+// Atualizar pessoa juridica
+nfe.legalPeople.<span class="apidocCodeKeywordSpan">update</span>(
+
+// ID da empresa que foi copiado do painel.
+nfeConfig.companyId,
+
+// ID da Pessoa Jurídica
+&#x27;5447d23253c8b704d4b48673&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.NaturalPeople" id="apidoc.module.nfe-io.resources.NaturalPeople">module nfe-io.resources.NaturalPeople</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.NaturalPeople" id="apidoc.element.nfe-io.resources.NaturalPeople.NaturalPeople">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>NaturalPeople
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NaturalPeople = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.extend" id="apidoc.element.nfe-io.resources.NaturalPeople.extend">
+        function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.</span>extend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_Error.extend = utils.protoExtend;
+
+/**
+ * Create subclass of internal Error class
+ * (Specifically for errors returned from NFe.io REST API)
+ */
+var ResourceError = _Error.ResourceError = _Error.<span class="apidocCodeKeywordSpan">extend</span>({
+  type: &#x27;ResourceError&#x27;,
+  populate: function(raw) {
+
+// Move from prototype def (so it appears in stringified obj)
+this.type = this.type;
+
+this.code = raw.code;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.method" id="apidoc.element.nfe-io.resources.NaturalPeople.method">
+        function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.</span>method
+        <span class="apidocSignatureSpan">(spec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nfeMethod(spec) {
+
+  var commandPath = utils.makeURLInterpolator( spec.path || &#x27;&#x27; );
+  var requestMethod = (spec.method || &#x27;GET&#x27;).toUpperCase();
+  var urlParams = spec.urlParams || [];
+
+  return function() {
+
+    var self = this;
+    var args = [].slice.call(arguments);
+
+    var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+    var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+    var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+    var urlData = this.createUrlData();
+
+    var deferred = this.createDeferred(callback);
+
+    for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+      var arg = args[0];
+      if (urlParams[i] &#x26;&#x26; !arg) {
+        throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+      }
+      urlData[urlParams[i]] = args.shift();
+    }
+
+    if (args.length) {
+      throw new Error(
+        &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+      );
+    }
+
+    var requestPath = this.createFullPath(commandPath, urlData);
+
+    self._request(requestMethod, requestPath, data, auth, function(err, response) {
+      if (err) {
+        deferred.reject(err);
+      } else {
+        deferred.resolve(
+          spec.transformResponseData ?
+            spec.transformResponseData(response) :
+            response
+        );
+      }
+    });
+
+    return deferred.promise;
+
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.NaturalPeople.prototype" id="apidoc.module.nfe-io.resources.NaturalPeople.prototype">module nfe-io.resources.NaturalPeople.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.create" id="apidoc.element.nfe-io.resources.NaturalPeople.prototype.create">
+        function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Exemplo genérico
+// nfe.{ RESOURCE_NAME }.{ METHOD_NAME } ( { PARAMETERS, DATA }, { CALLBACK_FUNCTION } )
+```
+Todo método aceita um callback opcional como ultimo argumento:
+
+### Emitir uma Nota Fiscal de Serviço
+```js
+nfe.serviceInvoices.<span class="apidocCodeKeywordSpan">create</span>(
+
+// ID da empresa, você deve copiar exatamente como está no painel
+&#x27;c73d49f9649046eeba36&#x27;,
+
+// Dados da nota fiscal de serviço
+{
+  // Código do serviço de acordo com o a cidade
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.list" id="apidoc.element.nfe-io.resources.NaturalPeople.prototype.list">
+        function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.remove" id="apidoc.element.nfe-io.resources.NaturalPeople.prototype.remove">
+        function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>remove
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.retrieve" id="apidoc.element.nfe-io.resources.NaturalPeople.prototype.retrieve">
+        function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>retrieve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retrieve = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.NaturalPeople.prototype.update" id="apidoc.element.nfe-io.resources.NaturalPeople.prototype.update">
+        function <span class="apidocSignatureSpan">nfe-io.resources.NaturalPeople.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// 	caso você precise acessar mais de uma empresa, este valor não será útil.
+companyId: &#x22;company-id-from-panel&#x22;
+
+};
+var nfe = require(&#x27;nfe-io&#x27;)(nfeConfig.apiKey);
+
+// Atualizar pessoa juridica
+nfe.legalPeople.<span class="apidocCodeKeywordSpan">update</span>(
+
+// ID da empresa que foi copiado do painel.
+nfeConfig.companyId,
+
+// ID da Pessoa Jurídica
+&#x27;5447d23253c8b704d4b48673&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.ServiceInvoices" id="apidoc.module.nfe-io.resources.ServiceInvoices">module nfe-io.resources.ServiceInvoices</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.ServiceInvoices" id="apidoc.element.nfe-io.resources.ServiceInvoices.ServiceInvoices">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>ServiceInvoices
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ServiceInvoices = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.extend" id="apidoc.element.nfe-io.resources.ServiceInvoices.extend">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.</span>extend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_Error.extend = utils.protoExtend;
+
+/**
+ * Create subclass of internal Error class
+ * (Specifically for errors returned from NFe.io REST API)
+ */
+var ResourceError = _Error.ResourceError = _Error.<span class="apidocCodeKeywordSpan">extend</span>({
+  type: &#x27;ResourceError&#x27;,
+  populate: function(raw) {
+
+// Move from prototype def (so it appears in stringified obj)
+this.type = this.type;
+
+this.code = raw.code;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.method" id="apidoc.element.nfe-io.resources.ServiceInvoices.method">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.</span>method
+        <span class="apidocSignatureSpan">(spec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nfeMethod(spec) {
+
+  var commandPath = utils.makeURLInterpolator( spec.path || &#x27;&#x27; );
+  var requestMethod = (spec.method || &#x27;GET&#x27;).toUpperCase();
+  var urlParams = spec.urlParams || [];
+
+  return function() {
+
+    var self = this;
+    var args = [].slice.call(arguments);
+
+    var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+    var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+    var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+    var urlData = this.createUrlData();
+
+    var deferred = this.createDeferred(callback);
+
+    for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+      var arg = args[0];
+      if (urlParams[i] &#x26;&#x26; !arg) {
+        throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+      }
+      urlData[urlParams[i]] = args.shift();
+    }
+
+    if (args.length) {
+      throw new Error(
+        &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+      );
+    }
+
+    var requestPath = this.createFullPath(commandPath, urlData);
+
+    self._request(requestMethod, requestPath, data, auth, function(err, response) {
+      if (err) {
+        deferred.reject(err);
+      } else {
+        deferred.resolve(
+          spec.transformResponseData ?
+            spec.transformResponseData(response) :
+            response
+        );
+      }
+    });
+
+    return deferred.promise;
+
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.ServiceInvoices.prototype" id="apidoc.module.nfe-io.resources.ServiceInvoices.prototype">module nfe-io.resources.ServiceInvoices.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.cancel" id="apidoc.element.nfe-io.resources.ServiceInvoices.prototype.cancel">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>cancel
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancel = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.create" id="apidoc.element.nfe-io.resources.ServiceInvoices.prototype.create">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Exemplo genérico
+// nfe.{ RESOURCE_NAME }.{ METHOD_NAME } ( { PARAMETERS, DATA }, { CALLBACK_FUNCTION } )
+```
+Todo método aceita um callback opcional como ultimo argumento:
+
+### Emitir uma Nota Fiscal de Serviço
+```js
+nfe.serviceInvoices.<span class="apidocCodeKeywordSpan">create</span>(
+
+// ID da empresa, você deve copiar exatamente como está no painel
+&#x27;c73d49f9649046eeba36&#x27;,
+
+// Dados da nota fiscal de serviço
+{
+  // Código do serviço de acordo com o a cidade
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.downloadPdf" id="apidoc.element.nfe-io.resources.ServiceInvoices.prototype.downloadPdf">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>downloadPdf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">downloadPdf = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.downloadXml" id="apidoc.element.nfe-io.resources.ServiceInvoices.prototype.downloadXml">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>downloadXml
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">downloadXml = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.list" id="apidoc.element.nfe-io.resources.ServiceInvoices.prototype.list">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.ServiceInvoices.prototype.retrieve" id="apidoc.element.nfe-io.resources.ServiceInvoices.prototype.retrieve">
+        function <span class="apidocSignatureSpan">nfe-io.resources.ServiceInvoices.prototype.</span>retrieve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retrieve = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.Webhooks" id="apidoc.module.nfe-io.resources.Webhooks">module nfe-io.resources.Webhooks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.Webhooks" id="apidoc.element.nfe-io.resources.Webhooks.Webhooks">
+        function <span class="apidocSignatureSpan">nfe-io.resources.</span>Webhooks
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Webhooks = function () {
+  Super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.extend" id="apidoc.element.nfe-io.resources.Webhooks.extend">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.</span>extend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_Error.extend = utils.protoExtend;
+
+/**
+ * Create subclass of internal Error class
+ * (Specifically for errors returned from NFe.io REST API)
+ */
+var ResourceError = _Error.ResourceError = _Error.<span class="apidocCodeKeywordSpan">extend</span>({
+  type: &#x27;ResourceError&#x27;,
+  populate: function(raw) {
+
+// Move from prototype def (so it appears in stringified obj)
+this.type = this.type;
+
+this.code = raw.code;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.method" id="apidoc.element.nfe-io.resources.Webhooks.method">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.</span>method
+        <span class="apidocSignatureSpan">(spec)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function nfeMethod(spec) {
+
+  var commandPath = utils.makeURLInterpolator( spec.path || &#x27;&#x27; );
+  var requestMethod = (spec.method || &#x27;GET&#x27;).toUpperCase();
+  var urlParams = spec.urlParams || [];
+
+  return function() {
+
+    var self = this;
+    var args = [].slice.call(arguments);
+
+    var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+    var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+    var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+    var urlData = this.createUrlData();
+
+    var deferred = this.createDeferred(callback);
+
+    for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+      var arg = args[0];
+      if (urlParams[i] &#x26;&#x26; !arg) {
+        throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+      }
+      urlData[urlParams[i]] = args.shift();
+    }
+
+    if (args.length) {
+      throw new Error(
+        &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+      );
+    }
+
+    var requestPath = this.createFullPath(commandPath, urlData);
+
+    self._request(requestMethod, requestPath, data, auth, function(err, response) {
+      if (err) {
+        deferred.reject(err);
+      } else {
+        deferred.resolve(
+          spec.transformResponseData ?
+            spec.transformResponseData(response) :
+            response
+        );
+      }
+    });
+
+    return deferred.promise;
+
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.resources.Webhooks.prototype" id="apidoc.module.nfe-io.resources.Webhooks.prototype">module nfe-io.resources.Webhooks.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.prototype.create" id="apidoc.element.nfe-io.resources.Webhooks.prototype.create">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>create
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Exemplo genérico
+// nfe.{ RESOURCE_NAME }.{ METHOD_NAME } ( { PARAMETERS, DATA }, { CALLBACK_FUNCTION } )
+```
+Todo método aceita um callback opcional como ultimo argumento:
+
+### Emitir uma Nota Fiscal de Serviço
+```js
+nfe.serviceInvoices.<span class="apidocCodeKeywordSpan">create</span>(
+
+// ID da empresa, você deve copiar exatamente como está no painel
+&#x27;c73d49f9649046eeba36&#x27;,
+
+// Dados da nota fiscal de serviço
+{
+  // Código do serviço de acordo com o a cidade
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.prototype.list" id="apidoc.element.nfe-io.resources.Webhooks.prototype.list">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>list
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.prototype.remove" id="apidoc.element.nfe-io.resources.Webhooks.prototype.remove">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>remove
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.prototype.retrieve" id="apidoc.element.nfe-io.resources.Webhooks.prototype.retrieve">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>retrieve
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">retrieve = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.resources.Webhooks.prototype.update" id="apidoc.element.nfe-io.resources.Webhooks.prototype.update">
+        function <span class="apidocSignatureSpan">nfe-io.resources.Webhooks.prototype.</span>update
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">update = function () {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+
+  var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+  var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+  var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+  var urlData = this.createUrlData();
+
+  var deferred = this.createDeferred(callback);
+
+  for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+    var arg = args[0];
+    if (urlParams[i] &#x26;&#x26; !arg) {
+      throw new Error(&#x27;NFe.io: I require argument &#x22;&#x27; + urlParams[i] + &#x27;&#x22;, but I got: &#x27; + arg);
+    }
+    urlData[urlParams[i]] = args.shift();
+  }
+
+  if (args.length) {
+    throw new Error(
+      &#x27;NFe.io: Unknown arguments (&#x27; + args + &#x27;). Did you mean to pass an options object? &#x27;
+    );
+  }
+
+  var requestPath = this.createFullPath(commandPath, urlData);
+
+  self._request(requestMethod, requestPath, data, auth, function(err, response) {
+    if (err) {
+      deferred.reject(err);
+    } else {
+      deferred.resolve(
+        spec.transformResponseData ?
+          spec.transformResponseData(response) :
+          response
+      );
+    }
+  });
+
+  return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// 	caso você precise acessar mais de uma empresa, este valor não será útil.
+companyId: &#x22;company-id-from-panel&#x22;
+
+};
+var nfe = require(&#x27;nfe-io&#x27;)(nfeConfig.apiKey);
+
+// Atualizar pessoa juridica
+nfe.legalPeople.<span class="apidocCodeKeywordSpan">update</span>(
+
+// ID da empresa que foi copiado do painel.
+nfeConfig.companyId,
+
+// ID da Pessoa Jurídica
+&#x27;5447d23253c8b704d4b48673&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.nfe-io.utils" id="apidoc.module.nfe-io.utils">module nfe-io.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.utils.isAuthKey" id="apidoc.element.nfe-io.utils.isAuthKey">
+        function <span class="apidocSignatureSpan">nfe-io.utils.</span>isAuthKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAuthKey = function (key) {
+  return typeof key == &#x27;string&#x27; &#x26;&#x26; /^(?:[a-z]{2}_)?[A-z0-9]{32}$/.test(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  return function() {
+
+var self = this;
+var args = [].slice.call(arguments);
+
+var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.<span class="apidocCodeKeywordSpan">isAuthKey</span>(args[args
+.length - 1]) ? args.pop() : null;
+var data = utils.isObject(args[args.length - 1]) ? args.pop() : {};
+var urlData = this.createUrlData();
+
+var deferred = this.createDeferred(callback);
+
+for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+  var arg = args[0];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.utils.isObject" id="apidoc.element.nfe-io.utils.isObject">
+        function <span class="apidocSignatureSpan">nfe-io.utils.</span>isObject
+        <span class="apidocSignatureSpan">(o)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isObject = function (o) {
+  return toString.call(o) === &#x27;[object Object]&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return function() {
+
+var self = this;
+var args = [].slice.call(arguments);
+
+var callback = typeof args[args.length - 1] == &#x27;function&#x27; &#x26;&#x26; args.pop();
+var auth = args.length &#x3e; urlParams.length &#x26;&#x26; utils.isAuthKey(args[args.length - 1]) ? args.pop() : null;
+var data = utils.<span class="apidocCodeKeywordSpan">isObject</span>(args[args.length - 1]) ? args.pop() : {};
+var urlData = this.createUrlData();
+
+var deferred = this.createDeferred(callback);
+
+for (var i = 0, l = urlParams.length; i &#x3c; l; ++i) {
+  var arg = args[0];
+  if (urlParams[i] &#x26;&#x26; !arg) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.utils.makeURLInterpolator" id="apidoc.element.nfe-io.utils.makeURLInterpolator">
+        function <span class="apidocSignatureSpan">nfe-io.utils.</span>makeURLInterpolator
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeURLInterpolator(str) {
+  return new Function(
+    &#x27;o&#x27;,
+    &#x27;return &#x22;&#x27; + (
+      str
+      .replace(/[&#x22;\n\r\u2028\u2029]/g, function($0) {
+        return rc[$0];
+      })
+      .replace(/\{([\s\S]+?)\}/g, &#x27;&#x22; + encodeURIComponent(o[&#x22;$1&#x22;]) + &#x22;&#x27;)
+    ) + &#x27;&#x22;;&#x27;
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param [spec.required=[]] Array of required arguments in the order that they
+ *  must be passed by the consumer of the API. Subsequent optional arguments are
+ *  optionally passed through a hash (Object) as the penultimate argument
+ *  (preceeding the also-optional callback argument
+ */
+module.exports = function nfeMethod(spec) {
+
+var commandPath = utils.<span class="apidocCodeKeywordSpan">makeURLInterpolator</span>( spec.path || &#x27;&#x27; );
+var requestMethod = (spec.method || &#x27;GET&#x27;).toUpperCase();
+var urlParams = spec.urlParams || [];
+
+return function() {
+
+  var self = this;
+  var args = [].slice.call(arguments);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.utils.protoExtend" id="apidoc.element.nfe-io.utils.protoExtend">
+        function <span class="apidocSignatureSpan">nfe-io.utils.</span>protoExtend
+        <span class="apidocSignatureSpan">(sub)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">protoExtend = function (sub) {
+  var Super = this;
+  var Constructor = hasOwn.call(sub, &#x27;constructor&#x27;) ? sub.constructor : function() {
+    Super.apply(this, arguments);
+  };
+  Constructor.prototype = Object.create(Super.prototype);
+  for (var i in sub) {
+    if (hasOwn.call(sub, i)) {
+      Constructor.prototype[i] = sub[i];
+    }
+  }
+  for (i in Super) {
+    if (hasOwn.call(Super, i)) {
+      Constructor[i] = Super[i];
+    }
+  }
+  return Constructor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.nfe-io.utils.stringifyRequestData" id="apidoc.element.nfe-io.utils.stringifyRequestData">
+        function <span class="apidocSignatureSpan">nfe-io.utils.</span>stringifyRequestData
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringifyRequestData = function (data) {
+
+  var output = [];
+
+  for (var i in data) {
+    if (hasOwn.call(data, i)) {
+      if (utils.isObject(data[i])) {
+        var hasProps = false;
+        for (var ii in data[i]) {
+          if (hasOwn.call(data[i], ii)) {
+            hasProps = true;
+            output.push(encode(i + &#x27;[&#x27; + ii + &#x27;]&#x27;) + &#x27;=&#x27; + encode(data[i][ii]));
+          }
+        }
+        if (!hasProps) {
+          output.push(encode(i) + &#x27;=&#x27; + encode(&#x27;&#x27;));
+        }
+      } else if (Array.isArray(data[i])) {
+        for (var a = 0, l = data[i].length; a &#x3c; l; ++a) {
+          output.push(encode(i + &#x27;[]&#x27;) + &#x27;=&#x27; + encode(data[i][a]));
+        }
+      } else {
+        output.push(encode(i) + &#x27;=&#x27; + encode(data[i]));
+      }
+    }
+  }
+
+  return output.join(&#x27;&#x26;&#x27;);
+
+  function encode(v) {
+    return v == null ? &#x27;&#x27; : encodeURIComponent(v);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
